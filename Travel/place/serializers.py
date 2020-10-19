@@ -9,6 +9,7 @@ class AmphoeSerializer(serializers.ModelSerializer):
 
 
 class PlaceSerializer(serializers.ModelSerializer):
+    Amphoe_data = AmphoeSerializer(read_only=True , source='Amphoe')
     class Meta:
         model = Place
         fields = '__all__'

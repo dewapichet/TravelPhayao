@@ -9,6 +9,7 @@ class Amphoe(models.Model):
         return f'Amphoe :{self.Amphoe_name}'
 
 class Place(models.Model):
+
     Place_name = models.CharField(max_length=70)
     Place_content = models.TextField()
     Amphoe = models.ForeignKey(Amphoe, on_delete=models.CASCADE)
