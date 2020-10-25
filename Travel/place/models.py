@@ -13,6 +13,7 @@ class Place(models.Model):
     Place_name = models.CharField(max_length=70)
     Place_content = models.TextField()
     Amphoe = models.ForeignKey(Amphoe, on_delete=models.CASCADE)
+    PathImage = models.CharField(max_length=200, default="")
 
 
     def __str__(self):

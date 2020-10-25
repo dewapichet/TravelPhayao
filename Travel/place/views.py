@@ -14,4 +14,14 @@ class GetPlace(generics.ListCreateAPIView):
     queryset = Place.objects.all()
     serializer_class = PlaceSerializer
 
+class GetIdPlace(generics.ListAPIView):
+    queryset = Place.objects.all()
+    serializer_class = PlaceSerializer
 
+    def get_queryset(self):
+        return  Place.objects.filter(Amphoe=self.kwargs['Amphoe'])
+
+class GetIdPlaceDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Place.objects.all()
+    lookup_field = 'id'
+    serializer_class = PlaceSerializer
