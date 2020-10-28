@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
 from .models import Amphoe, Place, Trip
-from .serializers import AmphoeSerializer, PlaceSerializer, TripSerializer
+from .serializers import AmphoeSerializer, PlaceSerializer , TripSerializer
 
 # Create your views here.
 
