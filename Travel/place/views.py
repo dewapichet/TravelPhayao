@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .models import Amphoe, Place
-from .serializers import AmphoeSerializer, PlaceSerializer
+from .models import Amphoe, Place, Trip
+from .serializers import AmphoeSerializer, PlaceSerializer, TripSerializer
 
 # Create your views here.
 
@@ -25,3 +25,7 @@ class GetIdPlaceDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Place.objects.all()
     lookup_field = 'id'
     serializer_class = PlaceSerializer
+
+class GetTrip(generics.ListCreateAPIView):
+    queryset = Trip.objects.all()
+    serializer_class = TripSerializer
